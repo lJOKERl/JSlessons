@@ -26,7 +26,12 @@ a {color: #01A4E0}
 
 a:hover {
 	text-decoration: none;
-	color: #01C4E0;
+	color: #60A8E3;
+}
+
+b {
+	color: #BEE1F1;
+	font-weight: 400;
 }
 
 label,
@@ -78,13 +83,12 @@ div#main {
 .menu a:hover {background: #555}
 
 /* Вкладки */
-ul#tabs {list-style: none}
+ul#tabs {list-style-type: none}
 
 ul#tabs li {
 	display: inline-block;
 	margin-right:10px;
 }
-
 
 select {
 	background: #222;
@@ -94,6 +98,7 @@ select {
 	font-size: .9em;
 }
 
+.info,
 .intro {
 	border: 1px solid #bbb;
 	padding: 20px;
@@ -101,12 +106,59 @@ select {
 	font-weight: 100;
 }
 
-li.tab {
-	
+.info {
+	color: #7DB536;
+	font-style: italic;
+	font-family: 'Georgia';
+	border: 1px solid #7DB536;
 }
 
-li.selected_tab a {
-	color: #E92525;
-}
+.info b {color: #D4CA64}
+
+li.selected_tab a {color: #E92525}
 
 .cont {display: none;}
+
+table.func {width: 100%}
+table.func tr:nth-child(odd) {background: #3f3f3f}
+table.func td {padding: .5em;}
+
+table.func tr td:first-child {
+	width: 35%;
+	color: #76D56C;
+	font-weight: 400;
+}
+
+.acc_header {
+	cursor: pointer;
+	font-weight: 100;
+}
+
+.acc_header:before {
+	display: inline-block;
+    border: 1px solid #ccc;
+    width: .8em;
+    height: .8em;
+    text-align: center;
+    line-height: .75em;
+    color: #ccc;
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+	content: "+";
+}
+
+.acc_header.show {}
+.acc_header.show:before {content: "-"}
+
+.accordeon {
+	display: none;
+	background: #2a2a2a;
+	padding: .25em .5em;
+}
+
+.accordeon.show {display: block;}
+
+ul.list {
+	margin-left: 1em;
+}

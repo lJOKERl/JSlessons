@@ -4,9 +4,9 @@ window.onload = function () {
 
 	var tabLinks = document.querySelectorAll("#tabs > li > a"),
 		tabs = document.querySelectorAll("#tabs > li"),
-		conts = document.querySelectorAll("#content > div");
-
-	//console.log(tabContent)
+		conts = document.querySelectorAll("#content > div"),
+		accHead = document.querySelectorAll(".acc_header"),
+		accord = document.querySelectorAll(".accordeon");
 
 	/* Обрезаем длинные называния ссылок */
 	for (var i = 0; i < tabLinks.length; i++) {
@@ -16,9 +16,10 @@ window.onload = function () {
 	}
 
 	/* Вкладки */
-	function clearClasses(array) {
-		for (var i = 0; i < tabs.length; i++) {
-			tabs[i].classList = "tab";
+	/* Функция принимает массив элементов и class который нужно им присвоить */
+	function clearClasses(arr, cls) {
+		for (var i = 0; i < arr.length; i++) {
+			arr[i].classList = cls;
 		}
 	}
 
@@ -37,14 +38,24 @@ window.onload = function () {
 	for (var i = 0; i < tabs.length; i++) {
 		let k = i;
 		tabs[i].onclick = function () {
-			clearClasses();
+			clearClasses(tabs, "tab");
 			clearContClasses();
 			this.classList = "selected_tab";
 			conts[k].classList = "show";
 		}
 	}
 
-	// tabs[i].addEventListener('click', function () {
-	// 	alert(1);
-	// })
+	/* Сворачиваем-разворачиваем блоки */
+	for (var i = 0; i < accHead.length; i++) {
+		let k = i;
+		accHead[i].onclick = function (e) {
+			clearClasses(accord, "accordeon");
+			this.nextElementSibling.classList.toggle("show");
+
+			if (accord[k].classList.contains("show")) {
+				clearClasses(accHead, "acc_header");
+				this.classList.add("show");
+			}
+		}
+	}
 }

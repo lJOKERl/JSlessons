@@ -5,6 +5,7 @@
     <title>Тестовый</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i" rel="stylesheet">
+    <script src="../es5-shim-master/es5-shim.js"></script>
 </head>
 
 <body>
@@ -32,19 +33,59 @@
         <!-- Таймеры -->
         <div id="cont1" class="show">
             <h2>Таймеры</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ducimus vero necessitatibus consequuntur porro optio odio fuga enim neque, officia laboriosam odit magnam voluptas recusandae ratione in eligendi aperiam minus.</p>
+            <p>В JavaScript <b>нет</b> встроенного способа <b>задержать</b> выполнение скрипта на определенное время, но есть способы запустить код через определенный промежуток времени или непрерывно, через интервал.</p>
+            
+            <table class="func">
+                <tr>
+                    <td width="30%">setTimeout(fn, ms)</td>
+                    <td>запустить код один раз через указанное количество миллисекунд</td>
+                </tr>
+                <tr>
+                    <td>clearTimeout(timeoutId)</td>
+                    <td>отменить назначенный запуск</td>
+                </tr>
+                <tr>
+                    <td>setInterval(fn, ms)</td>
+                    <td>запускать код с указанной периодичностью</td>
+                </tr>
+                <tr>
+                    <td>clearInterval(timeoutId)</td>
+                    <td>отменить setInterval</td>
+                </tr>
+            </table>
+
+            <p class="acc_header">Показать пример</p>
+            <div class="accordeon">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure mollitia quisquam a magni tempora nisi, aperiam, accusantium ducimus deserunt, aut nostrum quibusdam quas facere laboriosam libero esse fugiat illum incidunt.</div>
+
+            <p class="acc_header">Показать второй пример</p>
+            <div class="accordeon">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque doloribus minima nam hic non amet est eos voluptatum veritatis quia numquam ipsum expedita adipisci, voluptas fuga. Laboriosam, odio, suscipit sapiente in, nostrum vel veniam explicabo, quo mollitia minus temporibus nisi. Aut id numquam, doloribus velit magnam debitis. Ipsa temporibus voluptate veniam voluptatem incidunt debitis quidem sapiente rerum, iure possimus, doloremque enim dolorem pariatur, excepturi alias doloribus magnam delectus nulla. Quis architecto aperiam autem! Illum accusantium quaerat error quasi qui, molestias assumenda at itaque, rem fuga repellendus facilis magni magnam placeat commodi, voluptatem saepe architecto vel pariatur aperiam doloribus odit alias. Optio exercitationem asperiores, neque accusantium expedita, dicta hic dolor ratione mollitia incidunt provident culpa doloremque repellat non voluptatum molestias vel esse quasi fugit quas repudiandae, tenetur, explicabo cum! Id deleniti quis sunt quibusdam eum iure molestias eaque blanditiis. Eligendi quis omnis laboriosam magnam autem dolorum, inventore, voluptatem sit ipsa obcaecati earum doloribus quam odio sequi cumque accusantium ullam ipsum aliquam quas sapiente, libero? Impedit numquam unde ipsam veritatis? Officiis et amet laborum, quidem deserunt iusto quasi suscipit modi eum ipsam numquam impedit, nemo hic natus tempora. Natus voluptatem, quis illum nisi minima inventore doloremque quod architecto nihil iusto sed corrupti eos asperiores mollitia eligendi ex pariatur minus. Accusantium, hic cum quaerat officia, dignissimos culpa. Dicta, numquam, eveniet. Similique possimus consequatur repudiandae assumenda unde amet, perferendis, ea quae blanditiis nulla aliquam ipsa illum mollitia ad, quia debitis iure. Quia magnam odio, voluptas, ex eaque explicabo facere impedit, quidem omnis maxime cum saepe quae, quos eum. Non temporibus amet hic minima, accusantium porro, quo asperiores tempora aperiam vel provident molestias ullam! Numquam iure, dolor quo maxime, doloribus illo omnis voluptates a consectetur vel molestias adipisci commodi tempore, consequuntur architecto sit illum eius beatae atque asperiores eos aperiam quas ex. Atque, earum eveniet?</div>
         </div>
      
         <!-- Асинхронность -->
         <div id="cont2" class="cont">
             <h2>Асинхронность</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus totam delectus, ipsa dolorum impedit tempora adipisci eius ex nam accusamus quibusdam sunt amet vel sit, omnis aperiam pariatur, fuga rerum.</p>
+            <p><b>Асинхронность</b> подразумевает, что можно выполнять <b>несколько</b> задач(кусков кода) <b>одновременно</b>.</p>
+            <p>Бытует неверное мнение, что JS является асинхронным языком.</p>
+
+            <div class="info">В JS создается лишь <b>видимость</b> асинхронности за счет так называемого <b>цикла</b> событий. Влиять на цикл события можно при помощи <b>setTimeout</b> и <b>setInterval</b>. Эти методы всего лишь <b>имитируют</b> асинхронность.</div>
         </div>
 
         <!-- Promise и Deferred -->
         <div id="cont3" class="cont">
             <h2>Promise и Deferred</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae libero natus magnam atque magni error quaerat facilis dolorum est totam impedit, ratione doloribus explicabo architecto nihil saepe consequuntur a assumenda!</p>
+            <p><b>Promise(промис)</b> - это способ <b>организации</b> кода.</p>
+
+            <p>Для создания промиса, необходима <b>функция</b>, в которой выполняется какая-то <b>задача</b>.</p>
+
+            <p>При создании промиса, в эту функцию автоматически передаются два аргумента:</p>
+
+            <ul class="list">
+                <li>resolve callback</li>
+                <li>reject callback</li>
+            </ul>
+
+            <p>Задача функции - вызвать одну из функций, исходя из результата своей работы (resolve - успех, reject - неудача)</p>
+
         </div>
 
         <!-- AJAX -->
