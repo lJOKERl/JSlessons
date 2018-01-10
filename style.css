@@ -105,8 +105,8 @@ li.tab {
 	
 }
 
-li.selected_tab {
-	
+li.selected_tab a {
+	color: #E92525;
 }
 
 .cont {display: none;}
