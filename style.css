@@ -1,0 +1,112 @@
+body {
+	background: #333;
+	color: #eee;
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
+	font-weight: 300;
+	font-size: 1.2em; 
+	padding: 0;
+	margin: 0;
+}
+
+* {
+	outline: none;
+	box-sizing: border-box;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+}
+
+h1, h2, h3 {
+	font-weight: 100;
+}
+
+a {color: #01A4E0}
+
+a:hover {
+	text-decoration: none;
+	color: #01C4E0;
+}
+
+label,
+input,
+button,
+select {cursor: pointer}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+input[type=text] {
+	cursor: inherit;
+	padding: .5em .75em;
+	font-size: .9em;
+	background: #222;
+	color: #ddd;
+	border: 1px solid #ccc;
+}
+
+div#main {
+	margin: auto;
+	width: 1200px;
+	display: table;
+}
+
+.menu {height: 50px}
+
+.menu ul {list-style: none}
+
+.menu ul li {
+	display: inline-block;
+	height: 50px;
+	margin: 0 2px;
+}
+
+.menu a {
+	padding: 0 10px;
+	background: #444;
+	align-items: center;
+	display: inline-flex;
+	width: 100%;
+	height: 50px;
+	color: #eee;
+	text-decoration: none;
+}
+
+.menu a:hover {background: #555}
+
+/* Вкладки */
+ul#tabs {list-style: none}
+
+ul#tabs li {
+	display: inline-block;
+	margin-right:10px;
+}
+
+
+select {
+	background: #222;
+	border-color: #444;
+	color: #ccc;
+	padding: .25em .5em;
+	font-size: .9em;
+}
+
+.intro {
+	border: 1px solid #bbb;
+	padding: 20px;
+	border-radius: 20px;
+	font-weight: 100;
+}
+
+li.tab {
+	
+}
+
+li.selected_tab {
+	
+}
+
+.cont {display: none;}
