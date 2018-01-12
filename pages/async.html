@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Тестовый</title>
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i" rel="stylesheet">
     <script src="../es5-shim-master/es5-shim.js"></script>
 </head>
@@ -15,7 +15,7 @@
         <ul id="menu"></ul>
     </div>
 
-    <h1>Асинхронность</h1>
+    <h1><a href="docs/async.pdf" target="_blank"></a> Асинхронность</h1>
 
     <ul id="tabs">
         <li id="tab1" class="selected_tab"><a href="#">Таймеры</a></li>
@@ -54,20 +54,16 @@
                 </tr>
             </table>
 
-            <p class="acc_header">Показать пример</p>
-            <div class="accordeon">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure mollitia quisquam a magni tempora nisi, aperiam, accusantium ducimus deserunt, aut nostrum quibusdam quas facere laboriosam libero esse fugiat illum incidunt.</div>
-
-            <p class="acc_header">Показать второй пример</p>
-            <div class="accordeon">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque doloribus minima nam hic non amet est eos voluptatum veritatis quia numquam ipsum expedita adipisci, voluptas fuga. Laboriosam, odio, suscipit sapiente in, nostrum vel veniam explicabo, quo mollitia minus temporibus nisi. Aut id numquam, doloribus velit magnam debitis. Ipsa temporibus voluptate veniam voluptatem incidunt debitis quidem sapiente rerum, iure possimus, doloremque enim dolorem pariatur, excepturi alias doloribus magnam delectus nulla. Quis architecto aperiam autem! Illum accusantium quaerat error quasi qui, molestias assumenda at itaque, rem fuga repellendus facilis magni magnam placeat commodi, voluptatem saepe architecto vel pariatur aperiam doloribus odit alias. Optio exercitationem asperiores, neque accusantium expedita, dicta hic dolor ratione mollitia incidunt provident culpa doloremque repellat non voluptatum molestias vel esse quasi fugit quas repudiandae, tenetur, explicabo cum! Id deleniti quis sunt quibusdam eum iure molestias eaque blanditiis. Eligendi quis omnis laboriosam magnam autem dolorum, inventore, voluptatem sit ipsa obcaecati earum doloribus quam odio sequi cumque accusantium ullam ipsum aliquam quas sapiente, libero? Impedit numquam unde ipsam veritatis? Officiis et amet laborum, quidem deserunt iusto quasi suscipit modi eum ipsam numquam impedit, nemo hic natus tempora. Natus voluptatem, quis illum nisi minima inventore doloremque quod architecto nihil iusto sed corrupti eos asperiores mollitia eligendi ex pariatur minus. Accusantium, hic cum quaerat officia, dignissimos culpa. Dicta, numquam, eveniet. Similique possimus consequatur repudiandae assumenda unde amet, perferendis, ea quae blanditiis nulla aliquam ipsa illum mollitia ad, quia debitis iure. Quia magnam odio, voluptas, ex eaque explicabo facere impedit, quidem omnis maxime cum saepe quae, quos eum. Non temporibus amet hic minima, accusantium porro, quo asperiores tempora aperiam vel provident molestias ullam! Numquam iure, dolor quo maxime, doloribus illo omnis voluptates a consectetur vel molestias adipisci commodi tempore, consequuntur architecto sit illum eius beatae atque asperiores eos aperiam quas ex. Atque, earum eveniet?</div>
+            
         </div>
      
         <!-- Асинхронность -->
         <div id="cont2" class="cont">
-            <h2>Асинхронность</h2>
+            <h2>Основные компоненты BOM</h2>
             <p><b>Асинхронность</b> подразумевает, что можно выполнять <b>несколько</b> задач(кусков кода) <b>одновременно</b>.</p>
             <p>Бытует неверное мнение, что JS является асинхронным языком.</p>
 
-            <div class="info">В JS создается лишь <b>видимость</b> асинхронности за счет так называемого <b>цикла</b> событий. Влиять на цикл события можно при помощи <b>setTimeout</b> и <b>setInterval</b>. Эти методы всего лишь <b>имитируют</b> асинхронность.</div>
+            <div class="info"><p>В JS создается лишь <b>видимость</b> асинхронности за счет так называемого <b>цикла</b> событий. Влиять на цикл события можно при помощи <b>setTimeout</b> и <b>setInterval</b>. Эти методы всего лишь <b>имитируют</b> асинхронность.</p></div>
         </div>
 
         <!-- Promise и Deferred -->
@@ -86,42 +82,121 @@
 
             <p>Задача функции - вызвать одну из функций, исходя из результата своей работы (resolve - успех, reject - неудача)</p>
 
+            <p>На <i>полученный</i> объект промиса можно <i>“навесить”</i> так называемые <b>then callbacks</b> - функции, которые будут запущены <b>автоматически</b>, в зависимости от <i>результата</i> выполнения основной функции промиса. Количество таких <b>callbacks</b> - не ограничено.</p>
+
+            <div class="info"><p>Промисы можно <i>cгруппировать</i> в один объект. В этом случае, можно “навесить” на все сгруппированные промисы один <b>then callback</b>, который выполнится, когда <b>все</b> или <b>часть</b> промисов группы будут выполнены или отклонены.</p></div>
+
+            <p>Вызвать <b>resolve</b> или <b>reject</b> можно только <i>изнутри</i> основной функции.</p>
+
+            <p><b>Deferred-объект</b> - это небольшая надстройка над промисом, которая позволяет вызвать <b>resolve</b> или <b>reject</b> из любой точки кода, а не только изнутри основной функции промиса.</p>
+
+            <p>У классического <b>Deferred</b> обычно всего <b>два</b> метода (<b>resolve</b>, <b>reject</b>) и одно свойство <b>promise</b>, при помощи которого, можно навешивать <b>then callbacks</b> на промис Deferred-объекта</p>
+
         </div>
 
         <!-- AJAX -->
         <div id="cont4" class="cont">
             <h2>AJAX</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus sint odio dignissimos dolorem. Reiciendis maxime ipsam nobis numquam sed ratione esse rerum ullam, laudantium recusandae, quisquam temporibus id consectetur nisi.</p>
+            <p><b>AJAX</b> - механизм, встроенный в веб-браузер, позволяющий <b>посылать</b> запрос на сервер и обрабатывать <b>ответ</b> от сервера <i>не перезагружая</i> страницу. </p>
+
+            <p>Как результат - создается иллюзия desktop-приложения.</p>
+
+            <p>За реализацию <b>AJAX</b>, отвечает объект <b>XMLHttpRequest</b></p>
         </div>
 
         <!-- XMLHTTPRequest -->
         <div id="cont5" class="cont">
             <h2>XMLHTTPRequest</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto quia quidem porro voluptatum ad assumenda, cumque sed iure explicabo distinctio repellat accusamus et obcaecati sunt itaque officiis nostrum aperiam tenetur.</p>
+            <p>Для использования AJAX, необходимо:</p>
+            <ul class="list">
+                <li>создать новый объект типа XMLHTTPRequest</li>
+                <li>вызвать метод open(method, url, async)</li>
+                <li>добавить обработчики на все или некоторые события</li>
+                <li>вызвать метод send()</li>
+            </ul>
+            <p>Результат запроса будет храниться в свойстве response или responseText.</p>
+
+            <p>Если возникла ошибка, то http-код ошибки будет храниться в свойстве status.</p>
+
+            <h3>Обработчики на события:</h3>
+
+            <table class="func">
+                <tr>
+                    <td width="30%">onloadstart</td>
+                    <td>загрузка началась</td>
+                </tr>
+                <tr>
+                    <td>onreadystatechange </td>
+                    <td>смена состояния запроса</td>
+                </tr>
+                <tr>
+                    <td>onprogress</td>
+                    <td>браузер получил новые данные</td>
+                </tr>
+                <tr>
+                    <td>onloadend</td>
+                    <td>загрузка закончилась (успешно или с ошибкой)</td>
+                </tr>
+            </table>
         </div>
 
         <!-- JSON -->
         <div id="cont6" class="cont">
             <h2>JSON</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam amet incidunt fugiat corporis nostrum molestiae impedit porro, facilis a odit neque at, tenetur inventore id. Dolorem minima aut illum voluptates.</p>
+            <p><b>JSON (JavaScript Object Notation)</b> - формат данных, совместимый со способом описания обычного javascript-объекта.</p>
+
+            <p>По умолчанию, XMLHTTPRequest не преобразует http-ответ в json.</p>
+
+            <p>Чтобы сделать это, перед отправкой запроса, необходимо установить свойство responseType в ‘json’.</p>
+
+            <p>В таком случае ответ, преобразованный в json, будет храниться в свойство response.</p>
         </div>
 
         <!-- Cross Origin Resource Sharing -->
         <div id="cont7" class="cont">
             <h2>Cross Origin Resource Sharing</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis tempore atque aliquid odio, rem ducimus voluptas corporis pariatur sed, sequi excepturi, veritatis aliquam ad. Earum mollitia, non dolor aliquam necessitatibus.</p>
+            <p>По умолчанию, браузер не позволит отправлить ajax-запросы на сервер, хост или порт которого, отличный от того, с которого получена страница.</p>
+
+            <p>Но при помощи CORS, эта проблема легко решается.</p>
+
+            <p>Ее суть сводится к тому, что сервер, при ответе, отдает специальный заголовок: Access-Control-Allow-Origin: ….</p>
+
+            <p>Этот заголовок дает браузеру понять - кто может отправлять данному серверу кросс-доменные ajax-запросы.</p>
         </div>
 
         <!-- JSON-P -->
         <div id="cont8" class="cont">
             <h2>JSON-P</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat dolor provident ut, hic porro tenetur quos tempore ullam harum ea aspernatur, quidem saepe. Numquam sed dolore ut dignissimos! Totam, minima?</p>
+            <p><b>JSON-P</b> - один из методов, позволяющий обойти ограничения, накладываемые браузером на кросс-доменные запросы.</p>
+
+            <p>Суть метода сводится к тому, что браузер загружает специальный javascript-файл, который, после окончания загрузки, вызывает заранее установленную глобальную функцию и передает ей в качестве аргументов - данные.</p>
+
+            <p>Задача разработчика состоит в том, чтобы обработать полученные данные.</p>
+
+            <p>Чаще всего, такие javascript-файлы генерируются динамически (с подменой заголовков сервером) и не являются javascript-файлами как таковыми.</p>
         </div>
 
         <!-- AJAX в jQuery -->
         <div id="cont9" class="cont">
             <h2>AJAX в jQuery</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa autem, maiores fugiat magni, fuga corrupti iste numquam nulla suscipit id inventore. Delectus, odit, voluptatum! Perspiciatis debitis, voluptatem vitae obcaecati perferendis.</p>
+            <table class="jq">
+                <tr>
+                    <td width="30%">$.<span class="orange">ajax</span>(<span class="green">параметры</span>)</td>
+                    <td>функция, формирующая ajax-зарпос. Может принимать большое количество параметров</td>
+                </tr>
+                <tr>
+                    <td>$.<span class="orange">get</span>(<span class="green">url</span>, [<span class="green">обработчик</span>], [<span class="green">тип ответа</span>]) </td>
+                    <td>отправить get-зарпос</td>
+                </tr>
+                <tr>
+                    <td>$.<span class="orange">post</span>(<span class="green">url</span>, [<span class="green">данные</span>], [<span class="green">тип ответа</span>])</td>
+                    <td>отправить post-зарпос</td>
+                </tr>
+                <tr>
+                    <td>$(<span class="green">селектор</span>).<span class="orange">load</span>(<span class="green">url</span>)</td>
+                    <td>загрузить содержимое из внешнего источника и поместить внутрь элемента</td>
+                </tr>
+            </table>
         </div>
     </div>
 
@@ -130,6 +205,7 @@
 
 </body>
 
-    <script src="../menu.js"></script>
-    <script src="../script.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/async.js"></script>
 </html>

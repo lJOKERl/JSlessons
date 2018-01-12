@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тестовый</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i" rel="stylesheet">
+    <script src="../es5-shim-master/es5-shim.js"></script>
+</head>
+
+<body>
+
+<div id="main">
+    <div class="menu">
+        <ul id="menu"></ul>
+    </div>
+
+    <h1><a href="docs/bom.pdf" target="_blank"></a> BOM</h1>
+
+    <ul id="tabs">
+        <li id="tab1" class="selected_tab"><a href="#" title="Что такое BOM?">Что такое BOM?</a></li>
+        <li id="tab2" class="tab"><a href="#" title="Основные компоненты BOM">Основные компоненты BOM</a></li>
+        <li id="tab2" class="tab"><a href="#" title="window">window</a></li>
+        <li id="tab2" class="tab"><a href="#" title="screen">screen</a></li>
+        <li id="tab2" class="tab"><a href="#" title="location">location</a></li>
+        <li id="tab2" class="tab"><a href="#" title="history">history</a></li>
+        <li id="tab2" class="tab"><a href="#" title="navigator">navigator</a></li>
+        <li id="tab2" class="tab"><a href="#" title="cookie">cookie</a></li>
+        <li id="tab2" class="tab"><a href="#" title="Таймеры">Таймеры</a></li>
+        <li id="tab2" class="tab"><a href="#" title="Диалоги">Диалоги</a></li>
+    </ul>
+
+    <div id="content">
+        <!-- Что такое BOM? -->
+        <div id="cont1" class="show">
+            <h2>Что такое BOM?</h2>
+            <p><b>JavaScript</b> это просто <b>язык</b> программирования, который <b>не знает</b> о том, где и как его будут использовать</p>
+
+            <div class="info">
+                <p><b>BOM</b> - это всего лишь <b>набор объектов</b> и методов в них, для работы с <b>браузером</b>. </p>
+                <p>Это своеобразная <b>прослойка</b> между JS-кодом и браузером</p>
+            </div>
+
+            
+        </div>
+     
+        <!-- Основные компоненты BOM -->
+        <div id="cont2" class="cont">
+            <h2>Основные компоненты BOM</h2>
+            <table class="func">
+                <tr>
+                    <td width="30%">window</td>
+                    <td>работа с окнами и контейнер для львиной доли WEB API</td>
+                </tr>
+                <tr>
+                    <td>screen</td>
+                    <td>работа с экраном</td>
+                </tr>
+                <tr>
+                    <td>location</td>
+                    <td>работа адресной строкой</td>
+                </tr>
+                <tr>
+                    <td>history</td>
+                    <td>работа с историей переходов</td>
+                </tr>
+                <tr>
+                    <td>navigator</td>
+                    <td>информация о браузере</td>
+                </tr>
+                <tr>
+                    <td>cookie</td>
+                    <td>работа с cookie-хранилищем</td>
+                </tr>
+                <tr>
+                    <td>таймеры</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>диалоги</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- window -->
+        <div id="cont3" class="cont">
+            <h2>window</h2>
+            <p>Помимо прочего…</p>
+
+            <table class="jq">
+                <tr>
+                    <td width="30%"><span class="orange">open</span>(<span class="green">url</span>, <span class="green">name</span>, <span class="green">params</span>)</td>
+                    <td>открывает новое окно по указанному адресу, с указанным именем и параметрами</td>
+                </tr>
+                <tr>
+                    <td><span class="orange">close</span>()</td>
+                    <td>закрывает окно</td>
+                </tr>
+            </table>
+
+            <p>Если необходимо открыть <b>пустое</b> окно и наполнить его произвольным контентом, то необходимо указать пустой <b>url</b> и использовать метод:</p>
+
+            <table class="jq">
+                <tr>
+                    <td width="30%"><span class="orange">document.write</span>(<span class="green">text</span>)</td>
+                    <td>запишет новое содержимое в окно</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <!-- screen -->
+        <div id="cont4" class="cont">
+            <h2>screen</h2>
+            <p>Содержит информацию об экране:</p>
+
+            <table class="func">
+                <tr>
+                    <td width="30%">width</td>
+                    <td>работа с окнами и контейнер для львиной доли WEB API</td>
+                </tr>
+                <tr>
+                    <td>screen</td>
+                    <td>ширина экрана</td>
+                </tr>
+                <tr>
+                    <td>availWidth</td>
+                    <td>ширина области, в которойОС позволяет поместить окно</td>
+                </tr>
+                <tr>
+                    <td>height</td>
+                    <td>высота экрана</td>
+                </tr>
+                <tr>
+                    <td>availHeaght</td>
+                    <td>высота области, в которой ОС позволяет поместить окно</td>
+                </tr>
+                <tr>
+                    <td>colorDepth</td>
+                    <td>глубина цвета</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- location -->
+        <div id="cont5" class="cont">
+            <h2>location - работа с адресной строкой</h2>
+            <table class="func">
+                <tr>
+                    <td width="30%">href</td>
+                    <td>полное содержимое адресной строки</td>
+                </tr>
+                <tr>
+                    <td>hostname</td>
+                    <td>имя хоста</td>
+                </tr>
+                <tr>
+                    <td>pathname</td>
+                    <td>строка <i>относительно</i> имени хоста</td>
+                </tr>
+                <tr>
+                    <td>search</td>
+                    <td>строка запроса (знак “<b>?</b>” и всё, что после него в адресной строке)</td>
+                </tr>
+                <tr>
+                    <td>hash</td>
+                    <td>знак “<b>#</b>” и всё, что после него в адресной строке</td>
+                </tr>
+                <tr>
+                    <td><span class="orange">assign</span>(url)</td>
+                    <td>перейти по указанному <b>адресу</b></td>
+                </tr>
+                <tr>
+                    <td><span class="orange">reload</span>()</td>
+                    <td>перезагрузить текущую страницу</td>
+                </tr>
+            </table>
+
+            <p class="acc_header">Пример:</p>
+            <div class="accordeon">
+                <b>Location</b> {href: "file:///D:/javascript/JSlessons/pages/bom.html#", ancestorOrigins: DOMStringList, origin: "file://", replace: ƒ, assign: ƒ, …}<br>
+                <b>ancestorOrigins</b>: DOMStringList {length: 0}<br>
+                <b>assign</b>: ƒ ()<br>
+                <b>hash</b>: ""<br>
+                <b>host</b>: ""<br>
+                <b>hostname</b>: ""<br>
+                <b>href</b>: "file:///D:/javascript/JSlessons/pages/bom.html#"<br>
+                <b>origin</b>: "file://"<br>
+                <b>pathname</b>: "/D:/javascript/JSlessons/pages/bom.html"<br>
+                <b>port</b>: ""<br>
+                <b>protocol</b>: "file:"<br>
+                <b>reload</b>: ƒ reload()<br>
+                <b>replace</b>: ƒ ()<br>
+                <b>search</b>: ""<br>
+                <b>toString</b>: ƒ toString()<br>
+                <b>valueOf</b>: ƒ valueOf()<br>
+                <b>Symbol</b>(Symbol.toPrimitive): undefined<br>
+                <b>__proto__</b>: Location<br>
+            </div>
+        </div>
+
+        <!-- history -->
+        <div id="cont6" class="cont">
+            <h2>history - работа с историей переходов</h2>
+            <table class="func">
+                <tr>
+                    <td width="30%"><span class="orange">back</span>()</td>
+                    <td>вернуться на <b>предыдущую</b> страницу истории переходов</td>
+                </tr>
+                <tr>
+                    <td><span class="orange">forward</span>()</td>
+                    <td>перейти на <b>следующую</b> страницу истории переховод</td>
+                </tr>
+                <tr>
+                    <td><span class="orange">go</span>(amount)</td>
+                    <td>перейти <b>вперед</b> или <b>назад</b> по истории посещений на указанное <b>количество</b> шагов. Можно указывать отрицательное число</td>
+                </tr>
+                <tr>
+                    <td>Length</td>
+                    <td>сколько переходов сохранено в истории</td>
+                </tr>
+            </table>
+
+            <p>Так же, у <b>history</b> имеется специальный набор методов, для сохранения произвольных <b>состояний</b>. Данный набор методов является частью <b>HTML 5 API</b> и будет рассмотрен в одном из следующих занятий.</p>
+
+            <p class="acc_header">Пример:</p>
+            <div class="accordeon">
+                <b>History</b> {length: 27, scrollRestoration: "auto", state: null}<br>
+                <b>length</b>: 27<br>
+                <b>scrollRestoration</b>: "auto"<br>
+                <b>state</b>: null<br>
+                <b>__proto__</b>: History<br>
+            </div>
+        </div>
+
+        <!-- navigator -->
+        <div id="cont7" class="cont">
+            <h2>navigator - информация о браузере</h2>
+            <p>По сути, самыми важными и полезными свойствами являются:</p>
+
+            <table class="func">
+                <tr>
+                    <td width="30%">userAgent</td>
+                    <td>содержит информацию об <b>ОС и браузере</b></td>
+                </tr>
+                <tr>
+                    <td>language</span></td>
+                    <td><b>текущий</b> язык браузера</td>
+                </tr>
+                <tr>
+                    <td>online/offline</span></td>
+                    <td>Проверяют наличие <b>подключения к интернету</b></td>
+                </tr>
+
+            </table>
+
+            <p>Значения остальных свойств не претендуют на точность, либо существуют только в целях совместимости.</p>
+        </div>
+
+        <!-- cookie -->
+        <div id="cont8" class="cont">
+            <h2>cookie - локальное хранилище данных</h2>
+            <p><b>cookie</b> - небольшие текстовые файлы, хранящиеся на устройстве пользователя.</p>
+
+            <p>HTTP-протокол устроен таким образом, что веб-сервер <b>не умеет</b> запоминать своих клиентов и информацию о них. Соответственно, необходим механизм, который позволяет “напоминать” серверу о клиенте. Таким механизмом является <b>cookie</b>.</p>
+
+            <p>Размер каждого cookie <b>ограничен</b> небольшим значением(значение зависит от браузера).</p>
+
+            <p>У каждого cookie-элемент есть следующие свойства:</p>
+
+             <table class="func">
+                <tr>
+                    <td width="30%">name</td>
+                    <td>имя cookie-элемента</td>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>значение cookie-элемента (только текст)</td>
+                </tr>
+                <tr>
+                    <td>domain</td>
+                    <td>имя домена, для которого ставится cookie</td>
+                </tr>
+                <tr>
+                    <td>path</td>
+                    <td>относительный путь, для которого ставится cookie</td>
+                </tr>
+                <tr>
+                    <td>expires</td>
+                    <td>время жизни (указывается дата в <b>UTC</b>). Если не указать, то cookie-элемент удалится сразу после закрытия окна со страницей</td>
+                </tr>
+            </table>
+
+            <p class="acc_header">Для того, чтобы создать cookie-элемент, необходимо написать:</p>
+            <div class="accordeon">
+                <p><span class="orange">document.cookie</span> = ‘<span class="green">cookieName=cookieValue</span>’;</p>
+                <p>Это не перезапишет все cookie, а лишь создаст <b>новый</b> cookie-элемент.</p>
+                <p>Дополнительные свойства можно указать, разделив их через “; ”</p>
+
+                <p><span class="orange">document.cookie</span> =<br> ‘<span class="green">cookieName=cookieValue</span>;<br>
+                <span class="green">path=/some-path</span>’;</p>
+
+                <p>Получить все <b>не</b> просроченные cookie, соответствующие данному хосту и данному пути, можно обратившись к тому же свойству.</p>
+
+                <p>В ответ получим список cookie-элементов, разделенных “;”</p>
+            </div>
+        </div>
+
+        <!-- Таймеры -->
+        <div id="cont9" class="cont">
+            <h2>Таймеры</h2>
+            <table class="func">
+                <tr>
+                    <td width="30%"><span class="orange">setTimeout</span>(fn, milliseconds)</td>
+                    <td>выполнить функцию <b>один раз</b>, через определенный промежуток времени (возвращает <b>идентификатор</b> таймера)</td>
+                </tr>
+                <tr>
+                    <td><span class="orange">clearTimeout</span>(timerId) </td>
+                    <td>удалить таймер</td>
+                </tr>
+                <tr>
+                    <td><span class="orange">setInterval</span>(fn, milliseconds) </td>
+                    <td>выполнять функцию, с указанным <b>интервалом</b>, пока таймер не будет <b>удален</b> (возвращает <b>идентификатор</b> таймера)</td>
+                </tr>
+                <tr>
+                    <td><span class="orange">clearInterval</span>(timerId)</td>
+                    <td>удалить таймер</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Диалоги -->
+        <div id="cont9" class="cont">
+            <h2>Диалоги</h2>
+            <table class="func">
+                <tr>
+                    <td width="30%"><span class="orange">alert</span>(message)</td>
+                    <td>выводит простейшее окно с сообщением</td>
+                </tr>
+                <tr>
+                    <td><span class="orange">confirm</span>(question)</td>
+                    <td>показать окно с вопросом. Вернет <b>true</b> или <b>false</b>, в зависимости от того, что нажал пользователь</td>
+                </tr>
+                <tr>
+                    <td><span class="orange">prompt</span>(question, default)</td>
+                    <td>показать окно с полем для ввода текста. Если указан параметр <b>default</b>, то по умолчанию, в текстовом поле, будет именно это значение. Вернет введенное <b>значение</b> или <b>null</b>, в случае отмены ввода</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    
+</div>
+
+</body>
+
+    <script src="../js/menu.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/async.js"></script>
+</html>

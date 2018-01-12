@@ -1,6 +1,7 @@
 var menuArr = [
 	"<a href='index.html'>Главная</a>", 
-	"<a href='async.html'>Асинхронность</a>"
+	"<a href='async.html'>Асинхронность</a>",
+	"<a href='bom.html'>БОМ</a>"
 ];
 
 var ul = document.querySelector('#menu');

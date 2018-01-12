@@ -23,12 +23,6 @@ window.onload = function () {
 		}
 	}
 
-	function clearContClasses(array) {
-		for (var i = 0; i < conts.length; i++) {
-			conts[i].classList = "cont";
-		}
-	}
-
 	function showContBox(array) {
 		for (var i = 0; i < conts.length; i++) {
 			return conts[i].style.display = "block";
@@ -39,7 +33,7 @@ window.onload = function () {
 		let k = i;
 		tabs[i].onclick = function () {
 			clearClasses(tabs, "tab");
-			clearContClasses();
+			clearClasses(conts, "cont");
 			this.classList = "selected_tab";
 			conts[k].classList = "show";
 		}
